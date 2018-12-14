@@ -1,0 +1,15 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="RetryButtonStyle" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:background">@drawable/selector_btn_retry</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+
+</resources>

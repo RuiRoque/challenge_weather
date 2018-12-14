@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Weather Forecast</string>
+    <string name="error_button_retry">RETRY</string>
+    <string name="empty_message">No results found</string>
+    <string name="search_hint">Insert city name</string>
+    <string name="error_message">Unable to get the weather at the moment. Please, try again later.</string>
+    <string name="activity_main_sunset">SUNSET</string>
+    <string name="activity_main_sunrise">SUNRISE</string>
+    <string name="activity_main_not_found">Location not found!</string>
+</resources>

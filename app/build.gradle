@@ -1,0 +1,105 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 28
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    androidExtensions {
+        experimental = true
+    }
+
+    defaultConfig {
+        applicationId "com.challenge.weather"
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    dataBinding {
+        enabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            resValue "bool", "DEBUG", "false"
+        }
+        debug {
+            minifyEnabled false
+            resValue "bool", "DEBUG", "true"
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Kotlin
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    // Google
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation "com.android.support:design:28.0.0"
+
+    // Dagger 2
+    implementation "com.google.dagger:dagger:2.17"
+    kapt "com.google.dagger:dagger-compiler:2.17"
+    kaptAndroidTest "com.google.dagger:dagger-compiler:2.17"
+
+    // Dagger 2 Android
+    implementation "com.google.dagger:dagger-android:2.17"
+    implementation "com.google.dagger:dagger-android-support:2.17"
+    kapt "com.google.dagger:dagger-android-processor:2.17"
+
+    //RxJava
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.0'
+    implementation 'io.reactivex.rxjava2:rxkotlin:2.3.0'
+
+    // Lifecycles, LiveData and ViewModel
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+    kapt "android.arch.lifecycle:compiler:1.1.1"
+
+    // 3rd Party: Network - Retrofit2
+    implementation("com.squareup.retrofit2:retrofit:2.3.0") {
+        // Exclude Retrofit’s OkHttp peer-dependency module to define our own module import of OkHttp.
+        exclude module: 'okhttp'
+    }
+    implementation "com.squareup.retrofit2:converter-jackson:2.4.0"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:2.4.0"
+
+    // Jackson
+    implementation "com.fasterxml.jackson.core:jackson-core:2.9.7"
+    implementation "com.fasterxml.jackson.core:jackson-annotations:2.9.7"
+    implementation "com.fasterxml.jackson.core:jackson-databind:2.9.7"
+    implementation "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.7"
+
+    // 3rd Party: Network
+    implementation "com.squareup.okhttp3:okhttp:3.11.0"
+    implementation "com.squareup.okhttp3:okhttp-urlconnection:3.11.0"
+    implementation "com.squareup.okhttp3:logging-interceptor:3.11.0"
+    implementation 'com.squareup.okio:okio:1.15.0'
+    implementation 'com.jakewharton.picasso:picasso2-okhttp3-downloader:1.1.0'
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    androidTestImplementation "org.mockito:mockito-core:2.21.0"
+    androidTestImplementation "org.mockito:mockito-android:2.21.0"
+    androidTestImplementation "android.arch.core:core-testing:1.1.1"
+
+    testImplementation "org.mockito:mockito-core:2.21.0"
+    testImplementation "io.mockk:mockk:1.8.7"
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <!-- Grey -->
+    <color name="grey_400">#BDBDBD</color>
+
+    <!-- Blue -->
+    <color name="blue_400">#42A5F5</color>
+    <color name="blue_700">#0288D1</color>
+
+    <!-- Buttons -->
+    <color name="button_background_disabled">@color/grey_400</color>
+    <color name="button_retry_background_normal">@color/colorPrimary</color>
+    <color name="button_retry_background_pressed">@color/colorPrimaryDark</color>
+</resources>

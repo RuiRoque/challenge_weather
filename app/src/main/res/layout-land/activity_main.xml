@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+                name="weather"
+                type="com.challenge.weather.listing.viewmodel.entities.WeatherValues" />
+    </data>
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".listing.view.MainActivity">
+
+        <RelativeLayout
+                android:id="@+id/activity_main_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/activity_main_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:gravity="center_horizontal"
+                    android:textSize="40sp"
+                    android:layout_marginTop="65dp"
+                    android:layout_alignParentTop="true"
+                    android:text="@{weather.city}"
+                    tools:text="Lisbon"/>
+
+            <LinearLayout
+                    android:id="@+id/activity_main_sun_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/activity_main_city"
+                    android:orientation="horizontal">
+
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/activity_main_sunrise_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textColor="@android:color/black"
+                            android:textSize="20sp"
+                            android:text="@string/activity_main_sunrise"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/activity_main_sunrise"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textColor="@android:color/black"
+                            android:textSize="30sp"
+                            android:text="@{weather.sunrise}"
+                            tools:text="07:15:00"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/activity_main_weather"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:textColor="@android:color/black"
+                            android:textSize="180sp"
+                            android:text="@{weather.temp}"
+                            tools:text="30°"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/activity_main_sunset_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textColor="@android:color/black"
+                            android:textSize="20sp"
+                            android:text="@string/activity_main_sunset"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/activity_main_sunset"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textColor="@android:color/black"
+                            android:textSize="30sp"
+                            android:text="@{weather.sunset}"
+                            tools:text="17:47:00"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <include android:id="@+id/activity_main_loading"
+                 layout="@layout/loading"/>
+
+        <include android:id="@+id/activity_main_error"
+                 layout="@layout/error"/>
+
+        <include android:id="@+id/activity_main_toolbar"
+                 layout="@layout/main_toolbar"/>
+
+    </FrameLayout>
+
+</layout>

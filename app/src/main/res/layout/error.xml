@@ -1,0 +1,48 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+            android:id="@+id/error_root"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fillViewport="true"
+            android:visibility="gone"
+            tools:visibility="gone">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_gravity="center">
+
+            <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/error_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxWidth="200dp"
+                    android:gravity="center"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@android:color/black"
+                    tools:text="Unable to get the weather at the moment. Please, try again later."
+                    android:textSize="18sp"
+                    android:text="@string/error_message"
+                    android:lineSpacingExtra="3dp" />
+
+            <Button
+                    android:id="@+id/error_retry_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginBottom="25dp"
+                    android:minWidth="120dp"
+                    android:gravity="center"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/error_message"
+                    android:text="@string/error_button_retry"
+                    style="@style/RetryButtonStyle" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+</layout>

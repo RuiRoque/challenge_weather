@@ -1,0 +1,21 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+            android:id="@+id/loading_root"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            tools:visibility="gone">
+
+        <ProgressBar
+                android:id="@+id/loading_progress_bar"
+                android:layout_gravity="center"
+                android:indeterminateTint="@color/colorPrimary"
+                android:indeterminateTintMode="src_in"
+                android:layout_width="80dp"
+                android:layout_height="80dp"/>
+
+    </FrameLayout>
+
+</layout>
